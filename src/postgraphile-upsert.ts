@@ -76,7 +76,7 @@ const PgMutationUpsertPlugin: Plugin = builder => {
               attributes.find(attr => attr.num === num)
             )
             if (keys.some(key => omit(key, 'read'))) {
-              return
+              return acc
             }
             if (!keys.every(_ => _)) {
               throw new Error('Consistency error: could not find an attribute!')
