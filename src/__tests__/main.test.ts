@@ -2,7 +2,7 @@ import { container, DbContext } from './fixture/db'
 import { createPool } from './fixture/client'
 import { createServer, Server } from 'http'
 import { freeport } from './fixture/freeport'
-import { PgMutationUpsertPlugin } from '../postgraphile-upsert'
+import PgMutationUpsertPlugin from '../postgraphile-upsert'
 import { Pool } from 'pg'
 import { postgraphile } from 'postgraphile'
 import ava, { TestInterface } from 'ava'
@@ -98,7 +98,7 @@ test('test upsert crud', async t => {
     mutation {
       upsertBike(where: {
         serialNumber: "abc123"
-      }, 
+      },
       input: {
         bike: {
           serialNumber: "abc123"
@@ -119,7 +119,7 @@ test('test upsert crud', async t => {
     mutation {
       upsertBike(where: {
         serialNumber: "def456"
-      }, 
+      },
       input: {
         bike: {
           serialNumber: "def456"
@@ -140,7 +140,7 @@ test('test upsert crud', async t => {
     mutation {
       upsertBike(where: {
         serialNumber: "abc123"
-      }, 
+      },
       input: {
         bike: {
           serialNumber: "abc123"
@@ -211,7 +211,7 @@ test('test multi-column uniques', async t => {
       upsertRole(where: {
         project: "sales",
         title: "director"
-      }, 
+      },
       input: {
         role: {
           project: "sales",
@@ -233,7 +233,7 @@ test('test multi-column uniques', async t => {
       upsertRole(where: {
         project: "sales",
         title: "agent"
-      }, 
+      },
       input: {
         role: {
           project: "sales",
@@ -255,7 +255,7 @@ test('test multi-column uniques', async t => {
       upsertRole(where: {
         project: "sales",
         title: "director"
-      }, 
+      },
       input: {
         role: {
           project: "sales",

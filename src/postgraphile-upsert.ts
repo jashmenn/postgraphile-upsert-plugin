@@ -314,4 +314,4 @@ const PgMutationUpsertPlugin: Plugin = builder => {
   })
 }
 
-export { PgMutationUpsertPlugin }
+export default PgMutationUpsertPlugin
